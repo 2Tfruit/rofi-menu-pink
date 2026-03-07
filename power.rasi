@@ -49,19 +49,20 @@ element normal.urgent {
 
 element selected.normal {
   background-color: #c04070;
-  text-color: #f0a0c0;
+  text-color: #1e1020;
   border-radius: 8px;
 }
 
 element selected.urgent {
   background-color: #c03030;
-  text-color: #f0a0c0;
+  text-color: #1e1020;
   border-radius: 8px;
 }
 
 element-text {
   vertical-align: 0.5;
   background-color: transparent;
+  text-color: inherit;
 }
 
 entry {
