@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/7c740380-db34-4c85-98a3-034c2d4a6299
 | `xorg-xprop` | official | Сброс свойств обоев |
 | `xwinwrap-git` | AUR | Отображение видео на рабочем столе |
 
-| Шрифт | Описание | | Ссылка на шрифт |
+| Шрифт | Описание | Ссылка на шрифт |
 |---|---|---|
 | `Sjz` | Шрифт для меню | https://fonts-online.ru/fonts/sjz |
 так же шрифт будет в файлах!
