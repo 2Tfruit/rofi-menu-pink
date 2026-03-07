@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/7c740380-db34-4c85-98a3-034c2d4a6299
 так же шрифт будет в файлах!
 либо поменяйте на свой в файлaх *.rosi (2 строка)
 ### Установка зависимостей
-#### Из официальных репозиториев
+##### Из официальных репозиториев
 ```bash
 sudo pacman -S rofi feh mpv ffmpeg xorg-xprop
 ```
