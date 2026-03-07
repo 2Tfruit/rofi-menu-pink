@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/7c740380-db34-4c85-98a3-034c2d4a6299
 
 ```bash
 # Из официальных репозиториев
-sudo pacman -S rofi feh mpv ffmpeg nsxiv xorg-xprop
+sudo pacman -S rofi feh mpv ffmpeg xorg-xprop
 
 # Из AUR
 yay -S xwinwrap-git
