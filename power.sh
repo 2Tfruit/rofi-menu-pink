@@ -19,7 +19,7 @@ else
   PROMPT="Power"
 fi
 
-CHOSEN=$(echo -e " $POWEROFF\n $REBOOT\n $SLEEP\n $EXIT" | rofi -dmenu -theme "$THEME" -p "  $PROMPT")
+CHOSEN=$(echo -e " $POWEROFF\n $REBOOT\n $SLEEP\n $EXIT" | rofi -dmenu -theme "$THEME" -p "  $PROMPT" -u 3)
 
 case "$CHOSEN" in
   " $POWEROFF") systemctl poweroff ;;
