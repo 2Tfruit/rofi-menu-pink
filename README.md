@@ -146,3 +146,4 @@ chmod +x ~/.config/rofi/power.sh
     ├── power.rasi
     └── power.sh
 ```
+Описание тоже написал ИИ :)
