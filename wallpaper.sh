@@ -2,10 +2,12 @@
 # Папки с обоями
 STATIC_DIR="$HOME/Wallpaper"
 LIVE_DIR="$HOME/Wallpaper/live"
-PREVIEW_DIR="/tmp/wallpaper-previews"
+PREVIEW_DIR="$HOME/.cache/wallpaper-previews"  # кеш между сессиями
 # Настройки rofi
 THEME="$HOME/.config/rofi/wallpaper.rasi"
 ROFI_OPTS=(-dmenu -show-icons -theme "$THEME")
+# Настройки генерации превью
+MAX_JOBS=4  # максимум параллельных задач
 mkdir -p "$PREVIEW_DIR"
 # Язык
 LANG_SYS=$(echo $LANG | cut -c1-2)
@@ -31,11 +33,20 @@ show_live() {
     [ ! -f "$LIVE_DIR/$NAME" ] && rm "$PREVIEW"
   done
 
+  # Параллельная генерация превью с ограничением
+  JOBS=0
   find "$LIVE_DIR" -type f \( -name "*.mp4" -o -name "*.webm" -o -name "*.gif" \) | while read -r VIDEO; do
     NAME=$(basename "$VIDEO")
     PREVIEW="$PREVIEW_DIR/$NAME.jpg"
-    [ ! -f "$PREVIEW" ] && ffmpeg -i "$VIDEO" -vframes 1 -q:v 2 "$PREVIEW" -y 2>/dev/null
+    # Генерируем только если превью нет или видео новее превью
+    if [ ! -f "$PREVIEW" ] || [ "$VIDEO" -nt "$PREVIEW" ]; then
+      ffmpeg -i "$VIDEO" -vframes 1 -q:v 2 "$PREVIEW" -y 2>/dev/null &
+      JOBS=$((JOBS + 1))
+      [ "$JOBS" -ge "$MAX_JOBS" ] && wait && JOBS=0
+    fi
   done
+  wait
+
   CHOSEN=$(find "$PREVIEW_DIR" -type f -name "*.jpg" | while read -r PREVIEW; do
     NAME=$(basename "$PREVIEW" .jpg)
     echo -en "$NAME\0icon\x1f$PREVIEW\n"
