@@ -25,6 +25,12 @@ else
   PROMPT_STATIC="Static wallpaper"
 fi
 show_live() {
+  # Удаляем превью для которых нет оригинала
+  find "$PREVIEW_DIR" -type f -name "*.jpg" | while read -r PREVIEW; do
+    NAME=$(basename "$PREVIEW" .jpg)
+    [ ! -f "$LIVE_DIR/$NAME" ] && rm "$PREVIEW"
+  done
+
   find "$LIVE_DIR" -type f \( -name "*.mp4" -o -name "*.webm" -o -name "*.gif" \) | while read -r VIDEO; do
     NAME=$(basename "$VIDEO")
     PREVIEW="$PREVIEW_DIR/$NAME.jpg"
