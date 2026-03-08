@@ -1,0 +1,70 @@
+* {
+  font: "Sjz 18";
+  background-color: #2e1530;
+  text-color: #f0a0c0;
+}
+
+window {
+  width: 500px;
+  location: center;
+  anchor: center;
+  y-offset: 0;
+  x-offset: 0;
+  background-color: #1e1020;
+  border: 2px;
+  border-color: #f065a0;
+  border-radius: 15px;
+}
+
+inputbar {
+  background-color: #2e1530;
+  text-color: #f0a0c0;
+  padding: 8px;
+  border-radius: 10px;
+  enabled: true;
+}
+
+listview {
+  lines: 6;
+  fixed-height: false;
+  background-color: #1e1020;
+}
+
+element {
+  orientation: horizontal;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+element normal.normal {
+  background-color: transparent;
+  text-color: #f0a0c0;
+}
+
+element normal.urgent {
+  background-color: transparent;
+  text-color: #ff6060;
+}
+
+element selected.normal {
+  background-color: #c04070;
+  text-color: #000000;
+  border-radius: 8px;
+}
+
+element selected.urgent {
+  background-color: #c03030;
+  text-color: #000000;
+  border-radius: 8px;
+}
+
+element-text {
+  vertical-align: 0.5;
+  background-color: transparent;
+  text-color: inherit;
+}
+
+entry {
+  enabled: false;
+}
