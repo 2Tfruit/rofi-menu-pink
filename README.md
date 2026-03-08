@@ -4,6 +4,10 @@
 https://github.com/user-attachments/assets/0dc5bc5a-827e-45ce-8836-aecbe25344e4
 
 
+https://github.com/user-attachments/assets/ae5de2a0-0729-45d6-9b96-f52bbaaefc43
+
+
+
 Набор меню на основе rofi для BSPWM на Arch Linux с розовой цветовой схемой.
 
 ## 📦 Зависимости
